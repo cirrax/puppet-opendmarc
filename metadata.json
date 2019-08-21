@@ -2,18 +2,20 @@
   "name": "cirrax-opendmarc",
   "version": "1.0.0",
   "author": "Cirrax GmbH",
-  "license": "GPL-3.0",
   "summary": "A module to configure opendmarc",
+  "license": "GPL-3.0",
   "source": "https://github.com/cirrax/puppet-opendmarc",
   "project_page": "https://github.com/cirrax/puppet-opendmarc",
   "issues_url": "https://github.com/cirrax/puppet-opendmarc/issues",
-  "tags": [
-    "dmarc",
-    "opendmarc",
-    "mta",
-    "mail",
-    "email",
-    "postfix"
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0 < 5.0.0"
+    },
+    {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
@@ -33,14 +35,15 @@
       "version_requirement": ">=4.0.0 < 6.0.0"
     }
   ],
-  "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 3.2.0 < 5.0.0"
-    },
-    {
-      "name": "puppetlabs/inifile",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
-    }
-  ]
+  "tags": [
+    "dmarc",
+    "opendmarc",
+    "mta",
+    "mail",
+    "email",
+    "postfix"
+  ],
+  "pdk-version": "1.12.0",
+  "template-url": "pdk-default#1.12.0",
+  "template-ref": "1.12.0-0-g55d9ae2"
 }

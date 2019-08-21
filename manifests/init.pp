@@ -1,4 +1,4 @@
-
+#
 class opendmarc (
   Hash $configs = {},
   Hash $defaults = {},

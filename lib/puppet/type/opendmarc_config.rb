@@ -1,10 +1,9 @@
 Puppet::Type.newtype(:opendmarc_config) do
-
   ensurable
 
-  newparam(:name, :namevar => true) do
+  newparam(:name, namevar: true) do
     desc 'setting name to manage from opendmarc'
-    newvalues(/\S+/)
+    newvalues(%r{\S+})
   end
 
   newproperty(:value) do
@@ -14,24 +13,24 @@ Puppet::Type.newtype(:opendmarc_config) do
       value
     end
 
-    def is_to_s( currentvalue )
+    def is_to_s(currentvalue) # rubocop:disable Style/PredicateName
       if resource.secret?
-        return '[old secret redacted]'
+        '[old secret redacted]'
       else
-        return currentvalue
+        currentvalue
       end
     end
 
-    def should_to_s( newvalue )
+    def should_to_s(newvalue)
       if resource.secret?
-        return '[new secret redacted]'
+        '[new secret redacted]'
       else
-        return newvalue
+        newvalue
       end
     end
   end
 
-  newparam(:secret, :boolean => true) do
+  newparam(:secret, boolean: true) do
     desc 'Whether to hide the value from Puppet logs. Defaults to `false`.'
 
     newvalues(:true, :false)
@@ -42,7 +41,4 @@ Puppet::Type.newtype(:opendmarc_config) do
   autorequire(:package) do
     'opendmarc'
   end
-
 end
-
-
