@@ -16,29 +16,34 @@ describe 'opendmarc::install' do
         .with_tag('opendmarc-packages')
     }
   end
+  on_supported_os.each do |os, os_facts|
+    context "on #{os}" do
+      let(:facts) { os_facts }
 
-  context 'with defaults' do
-    let :params do
-      default_params
+      context 'with defaults' do
+        let :params do
+          default_params
+        end
+
+        it_behaves_like 'opendmarc::install shared examples'
+      end
+
+      context 'with non defaults' do
+        let :params do
+          default_params.merge(
+            packages: ['opendmarc', 'someother'],
+            package_ensure: 'absent',
+          )
+        end
+
+        it_behaves_like 'opendmarc::install shared examples'
+
+        it {
+          is_expected.to contain_package('someother')
+            .with_ensure(params[:package_ensure])
+            .with_tag('opendmarc-packages')
+        }
+      end
     end
-
-    it_behaves_like 'opendmarc::install shared examples'
-  end
-
-  context 'with non defaults' do
-    let :params do
-      default_params.merge(
-        packages: ['opendmarc', 'someother'],
-        package_ensure: 'absent',
-      )
-    end
-
-    it_behaves_like 'opendmarc::install shared examples'
-
-    it {
-      is_expected.to contain_package('someother')
-        .with_ensure(params[:package_ensure])
-        .with_tag('opendmarc-packages')
-    }
   end
 end

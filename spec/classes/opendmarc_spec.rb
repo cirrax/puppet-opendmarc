@@ -14,11 +14,17 @@ describe 'opendmarc' do
     it { is_expected.to contain_class('opendmarc::install') }
   end
 
-  context 'with defaults' do
-    let :params do
-      default_params
-    end
+  on_supported_os.each do |os, os_facts|
+    context "on #{os}" do
+      let(:facts) { os_facts }
 
-    it_behaves_like 'opendmarc shared examples'
+      context 'with defaults' do
+        let :params do
+          default_params
+        end
+
+        it_behaves_like 'opendmarc shared examples'
+      end
+    end
   end
 end
