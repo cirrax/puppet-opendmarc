@@ -33,14 +33,14 @@ If you like to use hiera, you can define:
 
 ~~~
 ---
-opendmarc::config:
+opendmarc::configs:
   RejectFailures: true
   Syslog: true
 ~~~
 
 ## Reference
 
-All classes are documented in the manifestss
+All classes are documented in the manifests.
 
 
 ## Contributing
