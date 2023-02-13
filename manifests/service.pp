@@ -2,13 +2,13 @@
 # create the opendmarc Service
 #
 # Parameters:
-# $service_name
+# @param service_name
 #   The name of the service
 #   Defaults to 'opendmarc'
-# $service_ensure 
+# @param service_ensure 
 #   state of the service.
 #   Defaults to  'running'
-# $service_enable
+# @param service_enable
 #   if service should be enabled
 #   Defaults to true
 #

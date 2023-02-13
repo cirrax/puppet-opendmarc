@@ -1,4 +1,11 @@
 #
+# main class to include
+#
+# @param configs
+#   configurations to load
+# @param defaults
+#   defaults to load
+# 
 class opendmarc (
   Hash $configs = {},
   Hash $defaults = {},

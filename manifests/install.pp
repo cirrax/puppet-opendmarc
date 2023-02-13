@@ -3,9 +3,9 @@
 # opendmarc is installed.
 #
 # Parameters:
-# $packages
+# @param packages
 #   Array of packages to install
-# $package_ensure
+# @param package_ensure
 #   ensure for package install
 #   defaults to 'installed'
 #
