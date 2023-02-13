@@ -2,7 +2,6 @@ Puppet::Type.type(:opendmarc_default).provide(
   :ini_setting,
   parent: Puppet::Type.type(:ini_setting).provider(:ruby),
 ) do
-
   def section
     ''
   end

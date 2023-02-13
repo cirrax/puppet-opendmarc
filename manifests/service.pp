@@ -12,19 +12,16 @@
 #   if service should be enabled
 #   Defaults to true
 #
-class opendmarc::service(
+class opendmarc::service (
   String  $service_name   = 'opendmarc',
   String  $service_ensure = 'running',
   Boolean $service_enable = true,
 ) {
-
   Package<|tag == 'opendmarc-packages'|> -> Service['opendmarc']
 
-  service{'opendmarc':
+  service { 'opendmarc':
     ensure => $service_ensure,
     name   => $service_name,
     enable => $service_enable,
   }
 }
-
-

@@ -12,12 +12,10 @@
 class opendmarc::install (
   Array  $packages       = ['opendmarc'],
   String $package_ensure = 'installed',
-){
-
+) {
   $package_default = {
     ensure => $package_ensure,
     tag    => 'opendmarc-packages',
   }
   ensure_packages($packages, $package_default)
-
 }

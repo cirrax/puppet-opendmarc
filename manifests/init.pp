@@ -3,9 +3,8 @@ class opendmarc (
   Hash $configs = {},
   Hash $defaults = {},
 ) {
-
-  include ::opendmarc::install
-  include ::opendmarc::service
+  include opendmarc::install
+  include opendmarc::service
 
   Opendmarc_config<||> ~> Service['opendmarc']
   Opendmarc_default<||> ~> Service['opendmarc']
