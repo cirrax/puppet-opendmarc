@@ -4,7 +4,7 @@ require 'spec_helper'
 describe 'opendmarc::install' do
   let :default_params do
     { packages: ['opendmarc'],
-      package_ensure: 'present' }
+      package_ensure: 'installed' }
   end
 
   shared_examples 'opendmarc::install shared examples' do
