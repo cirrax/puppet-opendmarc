@@ -7,8 +7,8 @@
 ### Classes
 
 * [`opendmarc`](#opendmarc): main class to include
-* [`opendmarc::install`](#opendmarcinstall): Internal class, that ensures opendmarc is installed.  Parameters:
-* [`opendmarc::service`](#opendmarcservice): create the opendmarc Service  Parameters:
+* [`opendmarc::install`](#opendmarc--install): Internal class, that ensures opendmarc is installed.  Parameters:
+* [`opendmarc::service`](#opendmarc--service): create the opendmarc Service  Parameters:
 
 ### Resource types
 
@@ -25,10 +25,10 @@ main class to include
 
 The following parameters are available in the `opendmarc` class:
 
-* [`configs`](#configs)
-* [`defaults`](#defaults)
+* [`configs`](#-opendmarc--configs)
+* [`defaults`](#-opendmarc--defaults)
 
-##### <a name="configs"></a>`configs`
+##### <a name="-opendmarc--configs"></a>`configs`
 
 Data type: `Hash`
 
@@ -36,7 +36,7 @@ configurations to load
 
 Default value: `{}`
 
-##### <a name="defaults"></a>`defaults`
+##### <a name="-opendmarc--defaults"></a>`defaults`
 
 Data type: `Hash`
 
@@ -44,7 +44,7 @@ defaults to load
 
 Default value: `{}`
 
-### <a name="opendmarcinstall"></a>`opendmarc::install`
+### <a name="opendmarc--install"></a>`opendmarc::install`
 
 Internal class, that ensures
 opendmarc is installed.
@@ -55,10 +55,10 @@ Parameters:
 
 The following parameters are available in the `opendmarc::install` class:
 
-* [`packages`](#packages)
-* [`package_ensure`](#package_ensure)
+* [`packages`](#-opendmarc--install--packages)
+* [`package_ensure`](#-opendmarc--install--package_ensure)
 
-##### <a name="packages"></a>`packages`
+##### <a name="-opendmarc--install--packages"></a>`packages`
 
 Data type: `Array`
 
@@ -66,7 +66,7 @@ Array of packages to install
 
 Default value: `['opendmarc']`
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-opendmarc--install--package_ensure"></a>`package_ensure`
 
 Data type: `String`
 
@@ -75,7 +75,7 @@ defaults to 'installed'
 
 Default value: `'installed'`
 
-### <a name="opendmarcservice"></a>`opendmarc::service`
+### <a name="opendmarc--service"></a>`opendmarc::service`
 
 create the opendmarc Service
 
@@ -85,11 +85,11 @@ Parameters:
 
 The following parameters are available in the `opendmarc::service` class:
 
-* [`service_name`](#service_name)
-* [`service_ensure`](#service_ensure)
-* [`service_enable`](#service_enable)
+* [`service_name`](#-opendmarc--service--service_name)
+* [`service_ensure`](#-opendmarc--service--service_ensure)
+* [`service_enable`](#-opendmarc--service--service_enable)
 
-##### <a name="service_name"></a>`service_name`
+##### <a name="-opendmarc--service--service_name"></a>`service_name`
 
 Data type: `String`
 
@@ -98,7 +98,7 @@ Defaults to 'opendmarc'
 
 Default value: `'opendmarc'`
 
-##### <a name="service_ensure"></a>`service_ensure`
+##### <a name="-opendmarc--service--service_ensure"></a>`service_ensure`
 
 Data type: `String`
 
@@ -107,14 +107,14 @@ Defaults to  'running'
 
 Default value: `'running'`
 
-##### <a name="service_enable"></a>`service_enable`
+##### <a name="-opendmarc--service--service_enable"></a>`service_enable`
 
 Data type: `Boolean`
 
 if service should be enabled
 Defaults to true
 
-Default value: ``true``
+Default value: `true`
 
 ## Resource types
 
@@ -142,11 +142,11 @@ The value of the setting to be defined.
 
 The following parameters are available in the `opendmarc_config` type.
 
-* [`name`](#name)
-* [`provider`](#provider)
-* [`secret`](#secret)
+* [`name`](#-opendmarc_config--name)
+* [`provider`](#-opendmarc_config--provider)
+* [`secret`](#-opendmarc_config--secret)
 
-##### <a name="name"></a>`name`
+##### <a name="-opendmarc_config--name"></a>`name`
 
 Valid values: `%r{\S+}`
 
@@ -154,18 +154,18 @@ namevar
 
 setting name to manage from opendmarc
 
-##### <a name="provider"></a>`provider`
+##### <a name="-opendmarc_config--provider"></a>`provider`
 
 The specific backend to use for this `opendmarc_config` resource. You will seldom need to specify this --- Puppet will
 usually discover the appropriate provider for your platform.
 
-##### <a name="secret"></a>`secret`
+##### <a name="-opendmarc_config--secret"></a>`secret`
 
-Valid values: ``true``, ``false``
+Valid values: `true`, `false`
 
 Whether to hide the value from Puppet logs. Defaults to `false`.
 
-Default value: ``false``
+Default value: `false`
 
 ### <a name="opendmarc_default"></a>`opendmarc_default`
 
@@ -191,11 +191,11 @@ The value of the setting to be defined.
 
 The following parameters are available in the `opendmarc_default` type.
 
-* [`name`](#name)
-* [`provider`](#provider)
-* [`secret`](#secret)
+* [`name`](#-opendmarc_default--name)
+* [`provider`](#-opendmarc_default--provider)
+* [`secret`](#-opendmarc_default--secret)
 
-##### <a name="name"></a>`name`
+##### <a name="-opendmarc_default--name"></a>`name`
 
 Valid values: `%r{\S+}`
 
@@ -203,16 +203,16 @@ namevar
 
 setting name to manage default opendmarc
 
-##### <a name="provider"></a>`provider`
+##### <a name="-opendmarc_default--provider"></a>`provider`
 
 The specific backend to use for this `opendmarc_default` resource. You will seldom need to specify this --- Puppet will
 usually discover the appropriate provider for your platform.
 
-##### <a name="secret"></a>`secret`
+##### <a name="-opendmarc_default--secret"></a>`secret`
 
-Valid values: ``true``, ``false``
+Valid values: `true`, `false`
 
 Whether to hide the value from Puppet logs. Defaults to `false`.
 
-Default value: ``false``
+Default value: `false`
 
