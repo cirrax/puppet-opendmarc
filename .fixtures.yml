@@ -1,10 +1,7 @@
 ---
 fixtures:
-  repositories:
-    stdlib:
-      repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
-    inifile:
-      repo: "https://github.com/puppetlabs/puppetlabs-inifile"
+  forge_modules:
+    stdlib: puppetlabs/stdlib
+    inifile: puppetlabs/inifile
   symlinks:
     opendmarc: "#{source_dir}"
-
